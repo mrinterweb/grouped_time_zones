@@ -14,4 +14,10 @@ Gem::Specification.new do |gem|
   gem.name          = "grouped_time_zones"
   gem.require_paths = ["lib"]
   gem.version       = GroupedTimeZones::VERSION
+
+  gem.add_dependency "rails", "~>3"
+  gem.add_development_dependency "rspec", "~>2.9.0"
+  gem.add_development_dependency "pry"
+  gem.add_development_dependency "pry-nav"
+  gem.add_development_dependency "nokogiri"
 end
