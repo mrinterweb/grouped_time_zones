@@ -1,6 +1,6 @@
 # GroupedTimeZones
 
-TODO: Write a gem description
+This is currently intended to be a very simple plugin that only provides a select field with time zones with United States time zones grouped first.
 
 ## Installation
 
@@ -18,12 +18,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+In your views, where ever you want a time zone select list grouped with US time zones first, drop this in.
 
-## Contributing
+    grouped_time_zone_select('user', 'time_zone', @user)
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Added some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+## Planned
+
+* More grouping options
+* Not just US first
+* Formatting options
+* Sorting options
