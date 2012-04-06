@@ -2,7 +2,7 @@ module GroupedTimeZones
   module ViewHelpers
     def  grouped_time_zone_select(name, attribute, record=nil)
       
-      select_tag("name[#{attribute}]", grouped_options_for_select(grouped_time_zones, (record ? record.send(attribute.to_sym) : nil)))
+      select_tag("#{name}[#{attribute}]", grouped_options_for_select(grouped_time_zones, (record ? record.send(attribute.to_sym) : nil)))
     end
 
     def grouped_time_zones
