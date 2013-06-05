@@ -7,7 +7,7 @@ module GroupedTimeZones
 
     def grouped_time_zones
       us_zones = ActiveSupport::TimeZone.us_zones
-      other_zones = ActiveSupport::TimeZone.all.sort - us_zones
+      other_zones = ActiveSupport::TimeZone.all.reject{|tz| tz.name =~ %r{/} }.sort - us_zones
       zone_options = lambda do |zones|
         zones.map { |tz| [tz.to_s, tz.tzinfo.identifier] }
       end
