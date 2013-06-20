@@ -16,7 +16,8 @@ module GroupedTimeZones
     private
 
     def other_zones(excluded_zones, force_uniq=false)
-      other_zones = force_uniq ? ActiveSupport::TimeZone.all.reject{|tz| tz.name =~ %r{/} }.uniq{|tz| tz.tzinfo.identifier } : ActiveSupport::TimeZone.all.reject{|tz| tz.name =~ %r{/} }
+      other_zones = ActiveSupport::TimeZone.all.reject{|tz| tz.name =~ %r{/} }
+      other_zones.uniq!{|tz| tz.tzinfo.identifier } if force_uniq
       other_zones.sort - excluded_zones
     end
   end
